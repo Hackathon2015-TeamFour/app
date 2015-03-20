@@ -19,6 +19,7 @@ namespace App.GUI.DataAccess
 
         public void start()
         {
+            //TODO database load entries
             while (read) { 
             switch(read.streamId) // eq CHF-EUR
                 case "CHF-EUR":
