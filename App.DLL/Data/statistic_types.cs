@@ -12,10 +12,8 @@ namespace GUI.Datos
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Id { get; set; }
 
-        [StringLength(50)]
-        public string OPE { get; set; }
+        public string Symbol { get; set; }
 
-        [StringLength(50)]
-        public string Open { get; set; }
+        public string Description { get; set; }
     }
 }

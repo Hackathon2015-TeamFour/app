@@ -13,7 +13,6 @@ namespace GUI.Datos
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int marketCode { get; set; }
 
-        [StringLength(50)]
         public string Exchange_or_Contributor_Name { get; set; }
     }
 }

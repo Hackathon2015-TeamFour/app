@@ -23,42 +23,7 @@ namespace GUI.Datos
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<market_code>()
-                .Property(e => e.Exchange_or_Contributor_Name)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<statistic_type>()
-                .Property(e => e.OPE)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<statistic_type>()
-                .Property(e => e.Open)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<used_instrument>()
-                .Property(e => e.valorName)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<used_instrument>()
-                .Property(e => e.SecType)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<value_style>()
-                .Property(e => e.IMA)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<value_style>()
-                .Property(e => e.Indicated_market)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<value_type>()
-                .Property(e => e.TRA)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<value_type>()
-                .Property(e => e.Trade)
-                .IsUnicode(false);
-
+            
 
  
 

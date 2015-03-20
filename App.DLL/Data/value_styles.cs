@@ -11,12 +11,7 @@ namespace GUI.Datos
     {
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Id { get; set; }
-
-        [StringLength(50)]
-        public string IMA { get; set; }
-
-        [Column("Indicated market")]
-        [StringLength(50)]
-        public string Indicated_market { get; set; }
+        public string Symbol { get; set; }
+        public string Description { get; set; }
     }
 }
