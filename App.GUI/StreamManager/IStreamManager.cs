@@ -4,6 +4,6 @@ namespace App.GUI.StreamManager
 {
     interface IStreamManager
     {
-        void process(mdf_stream entry);
+        void Process(mdf_stream entry);
     }
 }
