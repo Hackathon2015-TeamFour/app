@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
-namespace App.GUI
+namespace App.GUI.Util
+
 {
     /// <summary>
     /// Represents a fixted length ring buffer to store a specified maximal count of items within.
