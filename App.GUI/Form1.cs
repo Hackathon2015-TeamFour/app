@@ -22,7 +22,7 @@ namespace App.GUI
             InitializeComponent();
         }
 
-        public void updateGUI(StreamTypes StreamId, float value)
+        public void UpdateInvalidOnGui(StreamTypes StreamId, float value)
         {
             // TODO implement gui logic
 
