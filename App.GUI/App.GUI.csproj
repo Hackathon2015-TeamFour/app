@@ -51,9 +51,12 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="ISourceAccess.cs" />
+    <Compile Include="IStreamManager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RingBuffer.cs" />
     <Compile Include="SourceAdress.cs" />
+    <Compile Include="StreamManager.cs" />
     <Compile Include="STREAMTYPES.cs" />
     <Compile Include="UpdateResults.cs" />
     <Compile Include="IValueChangedListener.cs" />

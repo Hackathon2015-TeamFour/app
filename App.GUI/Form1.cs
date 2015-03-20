@@ -22,6 +22,7 @@ namespace App.GUI
         }
 
           private void updateGUI(StreamTypes StreamId, float value){
+              // TODO implement gui logic
         }
     }
 }

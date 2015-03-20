@@ -7,6 +7,6 @@ namespace App.GUI
 {
     interface IValueChangedListener
     {
-        updateGUI(string StreamId, float value);
+       public void updateGUI(string StreamId, float value);
     }
 }

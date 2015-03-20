@@ -6,7 +6,7 @@ using System.Text;
 
 namespace App.GUI.StreamManager
 {
-    class IStreamManager
+    interface IStreamManager
     {
         public void process(mdf_stream entry);
     }
