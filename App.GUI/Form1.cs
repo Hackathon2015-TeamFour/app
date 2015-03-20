@@ -21,7 +21,7 @@ namespace App.GUI
             InitializeComponent();
         }
 
-          private void updateGUI(string StreamId, float value){
+          private void updateGUI(StreamTypes StreamId, float value){
         }
     }
 }

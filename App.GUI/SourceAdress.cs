@@ -20,7 +20,9 @@ namespace App.GUI.DataAccess
         public void start()
         {
             //TODO database load entries
-            while (read) { 
+            IEnumerable<Object> entries;
+            entries.for
+            while (entries) { 
             switch(read.streamId) // eq CHF-EUR
                 case "CHF-EUR":
                     CHFEURManager.process(read)
