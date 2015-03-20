@@ -18,8 +18,8 @@ namespace App.GUI.DataAccess
         {
             this.listener = listener;
 
-            streamManagers.Add(StreamTypes.CHFEUR, new StreamManager.StreamManager(StreamTypes.CHFEUR,listener));
-            streamManagers.Add(StreamTypes.EURCHF, new StreamManager.StreamManager(StreamTypes.EURCHF,listener));
+            streamManagers.Add(StreamTypes.CHFEUR, new StreamManager.StreamManager(StreamTypes.CHFEUR, listener));
+            streamManagers.Add(StreamTypes.EURCHF, new StreamManager.StreamManager(StreamTypes.EURCHF, listener));
 
         }
 
@@ -32,30 +32,36 @@ namespace App.GUI.DataAccess
             using (var DBContext = new SixDataContext())
             {
                 var total = DBContext.mdf_stream.Count();
-                for (int offset = 0; offset < total; offset += 10) {   
-             var queryResult =   TakeNext(DBContext,offset);
-              
-               foreach (var result in queryResult){
-            //   mdf_stream entry = entries.First();
-            string value = result.valorNumber.valorName;
+                for (int offset = 0; offset < total; offset += 10)
+                {
+                    var queryResult = TakeNext(DBContext, offset);
+
+                    foreach (var result in queryResult)
+                    {
+                        //   mdf_stream entry = entries.First();
+                        string value = result.valorNumber.valorName;
 
 
-             StreamTypes type = parseEnum(value);
+                        var type = parseEnum(value);
 
-             try {
-                   var manager = streamManagers[type];
-                    manager.Process(result);
-               
-              }catch(Exception e)   {
-                    Debug.WriteLine("no Manager Found for "+value+" "+e.Message);
-                }}
+                        try
+                        {
+                            var manager = streamManagers[type];
+                            manager.Process(result);
+
+                        }
+                        catch (Exception e)
+                        {
+                            Debug.WriteLine("no Manager Found for " + value + " " + e.Message);
+                        }
+                    }
                 }
-            } 
+            }
         }
 
         private static List<mdf_stream> TakeNext(SixDataContext DBContext, long offset)
         {
-            return DBContext.mdf_stream.Skip((int) (10 * offset)).Take(10).ToList();
+            return DBContext.mdf_stream.Skip((int)(10 * offset)).Take(10).ToList();
         }
 
         private static StreamTypes parseEnum(string value)
