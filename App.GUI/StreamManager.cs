@@ -14,15 +14,22 @@ namespace App.GUI.StreamManager
         ConcurrentQueue<float> lastValues = new ConcurrentQueue<float>();
 
         private IValueChangedListener listener;
-        public StreamManager(IValueChangedListener listener)
+        private StreamTypes managerType;
+        public StreamManager(StreamTypes managerType,IValueChangedListener listener)
         {
             this.listener = listener;
+            this.managerType = managerType;
         }
 
         public void process(global::GUI.Datos.mdf_stream entry)
         {
-            buffer.Add(float.Parse(entry.value));
-            buffer.Average;
+            var last = float.Parse(entry.value);
+            var avg =   buffer.Average();
+
+            float lastMinusAvg = last - avg;
+            if(true){
+            listener.updateGUI(managerType,last);
+            }
             throw new NotImplementedException();
         }
     }
