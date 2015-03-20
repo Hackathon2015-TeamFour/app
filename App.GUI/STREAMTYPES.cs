@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace App.GUI
 {
-    enum StreamTypes 
+    public enum StreamTypes 
     {        
         CHFSEK,
         CHFPLN,
