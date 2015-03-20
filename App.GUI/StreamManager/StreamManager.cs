@@ -20,7 +20,7 @@ namespace App.GUI.StreamManager
             _managerType = managerType;
         }
 
-        public void process(global::App.DLL.Data.mdf_stream entry)
+        public void process(mdf_stream entry)
         {
             var last = float.Parse(entry.value);
             var avg = buffer.Average();

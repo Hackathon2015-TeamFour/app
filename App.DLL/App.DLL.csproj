@@ -55,21 +55,12 @@
     <Compile Include="Data\used_instruments.cs" />
     <Compile Include="Data\value_styles.cs" />
     <Compile Include="Data\value_types.cs" />
-    <Compile Include="Migrations\201503202125571_rename_columns.cs" />
-    <Compile Include="Migrations\201503202125571_rename_columns.Designer.cs">
-      <DependentUpon>201503202125571_rename_columns.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201503202125571_rename_columns.resx">
-      <DependentUpon>201503202125571_rename_columns.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
