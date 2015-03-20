@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Concurrent;
+using System.Diagnostics;
 using System.Linq;
 using App.GUI.Util;
 using App.DLL.Data;
@@ -40,12 +41,18 @@ namespace App.GUI.StreamManager
 
         private void SendToGui(float last)
         {
+            //TODO remove for production
+            Debug.WriteLine("accepted " + last + " " + _managerType);
             _listener.UpdateGui(_managerType, last);
         }
 
         private void SendErrorToGui(float last )
         {
+            //TODO remove for production
+            Debug.WriteLine("declined " + last + " " + _managerType);
             _listener.UpdateInvalidOnGui(_managerType, last);
         }
+
+   
     }
 }

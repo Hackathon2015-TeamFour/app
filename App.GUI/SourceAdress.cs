@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using App.DLL.Data;
 using App.GUI.StreamManager;
 using App.GUI.Util;
@@ -10,7 +13,7 @@ namespace App.GUI.DataAccess
     class SourceAdress : ISourceAccess
     {
         private IValueChangedListener listener;
-        private IDictionary streamManagers = new Dictionary<StreamTypes, IStreamManager>();
+        private readonly IDictionary<StreamTypes, IStreamManager> streamManagers = new Dictionary<StreamTypes, IStreamManager>();
         public SourceAdress(IValueChangedListener listener)
         {
             this.listener = listener;
@@ -23,20 +26,36 @@ namespace App.GUI.DataAccess
 
 
 
-        public void start()
+        public void Start()
         {
             //TODO database load entries
-            var DBContext = new SixDataContext();
-
+            using (var DBContext = new SixDataContext())
+            {
+                var total = DBContext.mdf_stream.Count();
+                for (int offset = 0; offset < total; offset += 10) {   
+             var queryResult =   TakeNext(DBContext,offset);
+              
+               foreach (var result in queryResult){
             //   mdf_stream entry = entries.First();
-            string value;
+            string value = result.valorNumber.valorName;
 
 
-            //  StreamTypes type = parseEnum(value);
+             StreamTypes type = parseEnum(value);
 
-            //     if(streamManagers.Contains(type))
-            //        streamManagers[type].process(entry);
-            // TODO call the stream Manager
+             try {
+                   var manager = streamManagers[type];
+                    manager.Process(result);
+               
+              }catch(Exception e)   {
+                    Debug.WriteLine("no Manager Found for "+value+" "+e.Message);
+                }}
+                }
+            } 
+        }
+
+        private static List<mdf_stream> TakeNext(SixDataContext DBContext, long offset)
+        {
+            return DBContext.mdf_stream.Skip((int) (10 * offset)).Take(10).ToList();
         }
 
         private static StreamTypes parseEnum(string value)

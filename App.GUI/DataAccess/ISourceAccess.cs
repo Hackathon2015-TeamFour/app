@@ -1,8 +1,8 @@
 ﻿namespace App.GUI.DataAccess
 {
-    interface ISourceAccess
+    public interface ISourceAccess
     {
-        void start();
+        void Start();
 
     }
 }

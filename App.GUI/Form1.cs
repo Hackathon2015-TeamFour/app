@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -31,6 +32,19 @@ namespace App.GUI
         public void UpdateGui(StreamTypes StreamId, float value)
         {
             throw new NotImplementedException();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Debug.WriteLine("started");
+            try
+            {
+                sourceAdress.Start();
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("Exception!: " + ex.Message);
+            }
         }
     }
 }
