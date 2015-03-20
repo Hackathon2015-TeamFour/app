@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using App.GUI;
 using App.GUI.StreamManager;
+using App.GUI.Util;
 
 namespace App.GUI.DataAccess
 {
