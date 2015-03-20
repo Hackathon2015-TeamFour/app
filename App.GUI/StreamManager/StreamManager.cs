@@ -2,6 +2,7 @@
 using System.Collections.Concurrent;
 using System.Linq;
 using App.GUI.Util;
+using App.DLL.Data;
 
 namespace App.GUI.StreamManager
 {
@@ -19,7 +20,7 @@ namespace App.GUI.StreamManager
             _managerType = managerType;
         }
 
-        public void process(global::GUI.Datos.mdf_stream entry)
+        public void process(global::App.DLL.Data.mdf_stream entry)
         {
             var last = float.Parse(entry.value);
             var avg = buffer.Average();

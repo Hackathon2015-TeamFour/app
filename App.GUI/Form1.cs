@@ -27,5 +27,10 @@ namespace App.GUI
             // TODO implement gui logic
 
         }
+
+        public void UpdateGui(StreamTypes StreamId, float value)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -1,4 +1,4 @@
-﻿using GUI.Datos;
+﻿using App.DLL.Data;
 
 namespace App.GUI.StreamManager
 {
