@@ -31,18 +31,44 @@ namespace GUI.Datos
         public string value { get; set; }
 
         [ForeignKey("marketCodeId")]
-        public virtual market_code marketCode { get; set; }
+        public virtual market_code ExchangeOrContributorName { get; set; }
         [ForeignKey("valorNumberId")]
         public virtual used_instrument valorNumber { get; set; }
         [ForeignKey("valueTypeId")]
         public virtual value_type valueType { get; set; }
+        /// <summary>
+        /// 2,OPE,Open
+        /// 3,LAS,Last
+        /// 4,HIG,Daily high
+        /// 5,LOW,Daily low
+        /// 6,DER,Derived
+        /// 9,REF,Reference
+        /// 10,SPE,Special
+        /// 11,BES,Best
+        /// 12,VAL,Valuation SIX Financial Information
+        /// 13,YIE,Yield
+        /// 14,CUM,Cumulated
+        /// 20,YCL,Year close
+        /// 25,VLT,Volatility
+        /// 30,MON,Monthly
+        /// </summary>
         [ForeignKey("statisticTypeId")]
         public virtual statistic_type statisticType { get; set; }
+        /// <summary>
+        /// 9,IMA,Indicated market
+        /// 19,CLS,Closing price
+        /// 56,OFF,Official
+        /// 246,DFU,Derived futures price
+        /// 553,DCV,Derived Constituents Value
+        /// </summary>
         [ForeignKey("valueStyleId")]
         public virtual value_style valueStyle { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
         [ForeignKey("currencyCodeId")]
         public virtual currency_code currencyCode { get; set; }
- 
+
 
     }
 }

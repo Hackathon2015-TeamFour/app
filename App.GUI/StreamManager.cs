@@ -7,15 +7,16 @@ using App.GUI;
 
 namespace App.GUI.StreamManager
 {
-    public class StreamManager  : IStreamManager
+    public class StreamManager : IStreamManager
     {
+        // size of ringbuffer == size  of events to keep
         private RingBuffer<float> buffer = new RingBuffer<float>(10);
-        
+
         ConcurrentQueue<float> lastValues = new ConcurrentQueue<float>();
 
         private IValueChangedListener listener;
         private StreamTypes managerType;
-        public StreamManager(StreamTypes managerType,IValueChangedListener listener)
+        public StreamManager(StreamTypes managerType, IValueChangedListener listener)
         {
             this.listener = listener;
             this.managerType = managerType;
@@ -24,13 +25,18 @@ namespace App.GUI.StreamManager
         public void process(global::GUI.Datos.mdf_stream entry)
         {
             var last = float.Parse(entry.value);
-            var avg =   buffer.Average();
+            var avg = buffer.Average();
 
             float lastMinusAvg = last - avg;
-            if(true){
-            listener.updateGUI(managerType,last);
+            if (true)
+            {
+                listener.updateGUI(managerType, last);
             }
-            throw new NotImplementedException();
+            else
+            {
+                // TODO log or save as false detected values
+            }
+
         }
     }
 }

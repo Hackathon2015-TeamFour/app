@@ -10,15 +10,16 @@ using App.GUI.StreamManager;
 namespace App.GUI.DataAccess
 {
     class SourceAdress : ISourceAccess
-
     {
         private IValueChangedListener listener;
         private IDictionary streamManagers = new Dictionary<StreamTypes, IStreamManager>();
-        public SourceAdress(IValueChangedListener listener){
+        public SourceAdress(IValueChangedListener listener)
+        {
             this.listener = listener;
 
             streamManagers.Add(StreamTypes.CHFEUR, new StreamManager.StreamManager(StreamTypes.CHFEUR,listener));
             streamManagers.Add(StreamTypes.EURCHF, new StreamManager.StreamManager(StreamTypes.EURCHF,listener));
+
         }
 
 
@@ -27,22 +28,22 @@ namespace App.GUI.DataAccess
         public void start()
         {
             //TODO database load entries
-    
-            IEnumerable<mdf_stream> entries;
-         //   mdf_stream entry = entries.First();
+            var DBContext = new SixDataContext();
+
+            //   mdf_stream entry = entries.First();
             string value;
-            
-                
-          //  StreamTypes type = parseEnum(value);
-            
-           //     if(streamManagers.Contains(type))
-             //        streamManagers[type].process(entry);
+
+
+            //  StreamTypes type = parseEnum(value);
+
+            //     if(streamManagers.Contains(type))
+            //        streamManagers[type].process(entry);
             // TODO call the stream Manager
         }
 
         private static StreamTypes parseEnum(string value)
         {
-           return ( StreamTypes) Enum.Parse(typeof(StreamTypes), value.Replace("/", ""),true);
+            return (StreamTypes)Enum.Parse(typeof(StreamTypes), value.Replace("/", ""), true);
         }
     }
 }
