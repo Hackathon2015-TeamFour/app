@@ -5,8 +5,8 @@ using System.Text;
 
 namespace App.GUI
 {
-    interface IValueChangedListener
+    public interface IValueChangedListener
     {
-       public void updateGUI(string StreamId, float value);
+       void updateGUI(StreamTypes StreamId, float value);
     }
 }

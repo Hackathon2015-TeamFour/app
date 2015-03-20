@@ -17,12 +17,14 @@ namespace App.GUI
         private static ISourceAccess sourceAdress;
         public Form1()
         {
-             sourceAdress = new SourceAdress(this);
+            sourceAdress = new SourceAdress(this);
             InitializeComponent();
         }
 
-          private void updateGUI(StreamTypes StreamId, float value){
-              // TODO implement gui logic
+        public void updateGUI(StreamTypes StreamId, float value)
+        {
+            // TODO implement gui logic
+
         }
     }
 }

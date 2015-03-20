@@ -7,7 +7,7 @@ namespace App.GUI.DataAccess
 {
     interface ISourceAccess
     {
-    public void        start();
-      
+        void start();
+
     }
 }

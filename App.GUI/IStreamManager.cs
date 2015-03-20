@@ -8,6 +8,6 @@ namespace App.GUI.StreamManager
 {
     interface IStreamManager
     {
-        public void process(mdf_stream entry);
+        void process(mdf_stream entry);
     }
 }
