@@ -16,8 +16,9 @@ namespace App.GUI.DataAccess
         private IDictionary streamManagers = new Dictionary<StreamTypes, IStreamManager>();
         public SourceAdress(IValueChangedListener listener){
             this.listener = listener;
-            listener.updateGUI("EUR/CHF", 123.12f);
-            streamManagers.Add(StreamTypes.CHFEUR,new StreamManager.StreamManager(listener))
+
+            streamManagers.Add(StreamTypes.CHFEUR, new StreamManager.StreamManager(StreamTypes.CHFEUR,listener));
+            streamManagers.Add(StreamTypes.EURCHF, new StreamManager.StreamManager(StreamTypes.EURCHF,listener));
         }
 
 
