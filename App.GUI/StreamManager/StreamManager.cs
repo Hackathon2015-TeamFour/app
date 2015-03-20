@@ -1,4 +1,5 @@
-﻿using System.Collections.Concurrent;
+﻿using System;
+using System.Collections.Concurrent;
 using System.Linq;
 using App.GUI.Util;
 
@@ -22,17 +23,28 @@ namespace App.GUI.StreamManager
         {
             var last = float.Parse(entry.value);
             var avg = buffer.Average();
-
+           
             var lastMinusAvg = last - avg;
-            if (true)
+            if (Math.Abs(lastMinusAvg) < avg * 0.01)
             {
-                _listener.UpdateGui(_managerType, last);
+                SendToGui(last);
             }
             else
             {
-                // TODO log or save as false detected values
+                SendErrorToGui(last);
+               
             }
 
+        }
+
+        private void SendToGui(float last)
+        {
+            _listener.UpdateGui(_managerType, last);
+        }
+
+        private void SendErrorToGui(float last )
+        {
+            _listener.UpdateInvalidOnGui(_managerType, last);
         }
     }
 }
