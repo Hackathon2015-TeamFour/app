@@ -5,14 +5,14 @@ namespace App.DLL.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<GUI.Datos.SixDataContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<App.DLL.Data.SixDataContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
         }
 
-        protected override void Seed(GUI.Datos.SixDataContext context)
+        protected override void Seed(App.DLL.Data.SixDataContext context)
         {
             //  This method will be called after migrating to the latest version.
 

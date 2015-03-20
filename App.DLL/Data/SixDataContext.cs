@@ -1,4 +1,4 @@
-namespace GUI.Datos
+namespace App.DLL.Data
 {
     using System;
     using System.Data.Entity;
@@ -16,6 +16,7 @@ namespace GUI.Datos
         public virtual DbSet<currency_code> currency_codes { get; set; }
         public virtual DbSet<market_code> market_codes { get; set; }
         public virtual DbSet<mdf_stream> mdf_stream { get; set; }
+        public virtual DbSet<mdf_stream_incorrect> incorrect_streams { get; set; }
         public virtual DbSet<statistic_type> statistic_types { get; set; }
         public virtual DbSet<used_instrument> used_instruments { get; set; }
         public virtual DbSet<value_style> value_styles { get; set; }
@@ -23,9 +24,9 @@ namespace GUI.Datos
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            
 
- 
+
+
 
 
 

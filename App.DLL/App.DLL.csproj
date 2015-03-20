@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="Data\currency_codes.cs" />
     <Compile Include="Data\market_codes.cs" />
+    <Compile Include="Data\mdf_incorrect_mdfstream.cs" />
     <Compile Include="Data\mdf_stream.cs" />
     <Compile Include="Data\SixDataContext.cs" />
     <Compile Include="Data\statistic_types.cs" />

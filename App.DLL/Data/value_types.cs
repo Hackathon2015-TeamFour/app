@@ -1,4 +1,4 @@
-namespace GUI.Datos
+namespace App.DLL.Data
 {
     using System;
     using System.Collections.Generic;
