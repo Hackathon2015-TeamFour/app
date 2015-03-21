@@ -21,7 +21,7 @@ namespace App.DLL.Data
         public virtual DbSet<used_instrument> used_instruments { get; set; }
         public virtual DbSet<value_style> value_styles { get; set; }
         public virtual DbSet<value_type> value_types { get; set; }
-
+        public virtual DbSet<ml_table> ml_table { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
 
