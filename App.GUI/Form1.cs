@@ -16,10 +16,10 @@ namespace App.GUI
 
     public partial class Form1 : Form, IValueChangedListener
     {
-        private static ISourceAccess sourceAdress;
+        private static ISourceAccess _sourceAdress;
         public Form1()
         {
-            sourceAdress = new SourceAdress(this);
+            _sourceAdress = new SourceAdress(this);
             InitializeComponent();
         }
 
@@ -39,12 +39,13 @@ namespace App.GUI
             Debug.WriteLine("started");
             try
             {
-                sourceAdress.Start();
+                _sourceAdress.Start();
             }
             catch (Exception ex)
             {
                 Debug.WriteLine("Exception!: " + ex.Message);
             }
         }
+
     }
 }

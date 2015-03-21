@@ -11,7 +11,7 @@ namespace App.GUI
 {
     class SourceAdress : ISourceAccess
     {
-        private IValueChangedListener listener;
+        private readonly IValueChangedListener listener;
         private readonly IDictionary<StreamTypes, IStreamManager> streamManagers = new Dictionary<StreamTypes, IStreamManager>();
         public SourceAdress(IValueChangedListener listener)
         {
