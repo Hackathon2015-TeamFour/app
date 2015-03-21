@@ -31,10 +31,11 @@ namespace App.GUI.DataAccess
             //TODO database load entries
             using (var DBContext = new SixDataContext())
             {
-                var total = DBContext.mdf_stream.Count();
+               var listOfAllEntries =  DBContext.mdf_stream.OrderBy(x => x.GSN);
+               var total = listOfAllEntries.Count();
                 for (int offset = 0; offset < total; offset += 10)
                 {
-                    var queryResult = TakeNext(DBContext, offset);
+                    var queryResult = TakeNext(listOfAllEntries, offset);
 
                     foreach (var result in queryResult)
                     {
@@ -59,9 +60,9 @@ namespace App.GUI.DataAccess
             }
         }
 
-        private static List<mdf_stream> TakeNext(SixDataContext DBContext, long offset)
+        private static List<mdf_stream> TakeNext(IQueryable<mdf_stream> ctx, long offset)
         {
-            return DBContext.mdf_stream.Skip((int)(10 * offset)).Take(10).ToList();
+            return ctx.Skip((int)(10 * offset)).Take(10).ToList();
         }
 
         private static StreamTypes parseEnum(string value)

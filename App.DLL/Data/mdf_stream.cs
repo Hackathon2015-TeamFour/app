@@ -13,7 +13,7 @@ namespace App.DLL.Data
         public string GSN { get; set; }
 
         [Column(TypeName = "date")]
-        public DateTime? date { get; set; }
+        public DateTime date { get; set; }
 
         public int? marketCodeId { get; set; }
 
