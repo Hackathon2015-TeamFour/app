@@ -27,8 +27,7 @@ namespace App.DLL.Data
 
         public int? valueStyleId { get; set; }
 
-        [StringLength(255)]
-        public string value { get; set; }
+        public decimal value { get; set; }
 
         [ForeignKey("marketCodeId")]
         public virtual market_code ExchangeOrContributor { get; set; }
@@ -69,6 +68,21 @@ namespace App.DLL.Data
         [ForeignKey("currencyCodeId")]
         public virtual currency_code currencyCode { get; set; }
 
+        public mdf_stream(string GSN, DateTime date, int marketCodeId, int currencyCodeId, int valorNumberId, int valueTypeId, int statisticTypeId, int valueStyleId, decimal value)
+        {
+            this.GSN = GSN;
+            this.date = date;
+            this.marketCodeId = marketCodeId;
+            this.currencyCodeId = currencyCodeId;
+            this.valorNumberId = valorNumberId;
+            this.valueTypeId = valueTypeId;
+            this.statisticTypeId = statisticTypeId;
+            this.valueStyleId = valueStyleId;
+            this.value = value;
+        }
+        public mdf_stream()
+        {
 
+        }
     }
 }
