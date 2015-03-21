@@ -11,7 +11,7 @@ namespace App.GUI.StreamManager
     {
         // size of ringbuffer == size  of events to keep
         private RingBuffer<float> buffer = new RingBuffer<float>(10);
-
+        float ONE_PERCENT = 0.01f;
 
         private readonly IValueChangedListener _listener;
         private readonly StreamTypes _managerType;
@@ -23,11 +23,14 @@ namespace App.GUI.StreamManager
 
         public void Process(mdf_stream entry)
         {
+            //TODO put machine learning here
             var last = float.Parse(entry.value);
-            var avg = buffer.Average();
+            var average = buffer.Average();
            
-            var lastMinusAvg = last - avg;
-            if (Math.Abs(lastMinusAvg) < avg * 0.01)
+            var lastMinusAvg = last - average;
+            // This is the current rule, we should find the same results as they are
+     
+            if (Math.Abs(lastMinusAvg) < average * ONE_PERCENT)
             {
                 SendToGui(last);
             }
