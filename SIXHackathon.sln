@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.GUI", "App.GUI\App.GUI.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.DLL", "App.DLL\App.DLL.csproj", "{6C2645E5-FAE3-490C-A36B-55FDC20508A8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestApp", "UnitTestApp\UnitTestApp.csproj", "{FF7B7527-B114-42A8-836A-FC76966A5897}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,16 @@ Global
 		{6C2645E5-FAE3-490C-A36B-55FDC20508A8}.Release|ARM.ActiveCfg = Release|Any CPU
 		{6C2645E5-FAE3-490C-A36B-55FDC20508A8}.Release|x64.ActiveCfg = Release|Any CPU
 		{6C2645E5-FAE3-490C-A36B-55FDC20508A8}.Release|x86.ActiveCfg = Release|Any CPU
+		{FF7B7527-B114-42A8-836A-FC76966A5897}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF7B7527-B114-42A8-836A-FC76966A5897}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF7B7527-B114-42A8-836A-FC76966A5897}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{FF7B7527-B114-42A8-836A-FC76966A5897}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{FF7B7527-B114-42A8-836A-FC76966A5897}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{FF7B7527-B114-42A8-836A-FC76966A5897}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF7B7527-B114-42A8-836A-FC76966A5897}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF7B7527-B114-42A8-836A-FC76966A5897}.Release|ARM.ActiveCfg = Release|Any CPU
+		{FF7B7527-B114-42A8-836A-FC76966A5897}.Release|x64.ActiveCfg = Release|Any CPU
+		{FF7B7527-B114-42A8-836A-FC76966A5897}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -31,7 +31,7 @@ namespace App.DLL.Data
         public string value { get; set; }
 
         [ForeignKey("marketCodeId")]
-        public virtual market_code ExchangeOrContributorName { get; set; }
+        public virtual market_code ExchangeOrContributor { get; set; }
         [ForeignKey("valorNumberId")]
         public virtual used_instrument valorNumber { get; set; }
         [ForeignKey("valueTypeId")]

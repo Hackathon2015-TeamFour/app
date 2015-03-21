@@ -67,6 +67,7 @@
     <Compile Include="StreamManager\StreamManager.cs" />
     <Compile Include="IValueChangedListener.cs" />
     <Compile Include="Util\RingBuffer.cs" />
+    <Compile Include="Util\SourceStore.cs" />
     <Compile Include="Util\STREAMTYPES.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
