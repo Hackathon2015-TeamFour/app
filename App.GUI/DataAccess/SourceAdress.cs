@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using App.DLL.Data;
-using App.GUI.DataAccess;
 using App.GUI.StreamManager;
 using App.GUI.Util;
 
-namespace App.GUI
+namespace App.GUI.DataAccess
 {
     class SourceAdress : ISourceAccess
     {
