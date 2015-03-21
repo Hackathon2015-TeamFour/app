@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace App.GUI.Util
 
@@ -144,12 +145,11 @@ namespace App.GUI.Util
         public IEnumerator<T> GetEnumerator()
         {
             long version = _version;
-            for (int i = 0; i < Count; i++)
-            {
+          
                 if (version != _version)
                     throw new InvalidOperationException("Collection changed");
-                yield return this[i];
-            }
+
+            return ((IEnumerable<T>) _buffer).GetEnumerator();
         }
 
         /// <summary>
@@ -308,8 +308,8 @@ namespace App.GUI.Util
         /// </returns>
         IEnumerator IEnumerable.GetEnumerator()
         {
-            return this.GetEnumerator();
+            return this._buffer.GetEnumerator();
         }
     }
- 
+
 }

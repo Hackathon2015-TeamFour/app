@@ -50,7 +50,7 @@ namespace UnitTestApp
                 case "ubs":
                     var marketCode = new market_code();
                     marketCode.Exchange_or_Contributor_Name = "UBS Investment Bank";
-                    market_code.marketCode = 176;
+               //     market_code.marketCode = 176;
                     return new SourceStore(marketCode);
                 default:
                     return null;

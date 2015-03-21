@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using App.GUI.Util;
-
-namespace App.GUI
+﻿namespace App.GUI.Util
 {
     public interface IValueChangedListener
     {
@@ -15,5 +9,7 @@ namespace App.GUI
         /// <param name="StreamId"></param>
         /// <param name="value"></param>
         void UpdateInvalidOnGui(StreamTypes StreamId, float value);
+
+        void ShowErrorOnGui(string entry);
     }
 }
