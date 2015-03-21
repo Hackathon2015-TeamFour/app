@@ -1,14 +1,13 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
 using App.DLL.Data;
+using App.GUI.DataAccess;
 using App.GUI.StreamManager;
 using App.GUI.Util;
 
-namespace App.GUI.DataAccess
+namespace App.GUI
 {
     class SourceAdress : ISourceAccess
     {
