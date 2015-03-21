@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Concurrent;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using App.GUI.Util;
@@ -11,6 +12,7 @@ namespace App.GUI.StreamManager
     {
         // size of ringbuffer == size  of events to keep
         private RingBuffer<float> buffer = new RingBuffer<float>(10);
+        private IDictionary<int,RingBuffer<float>>  _sourceDictionary = new Dictionary<int, RingBuffer<float>>(); 
         private const float ONE_PERCENT = 0.01f;
 
         private readonly IValueChangedListener _listener;
@@ -20,9 +22,15 @@ namespace App.GUI.StreamManager
             _listener = listener;
             _managerType = managerType;
         }
-
+        /// <summary>
+        /// only receives entries for it's instruments
+        /// </summary>
+        /// <param name="entry"></param>
         public void Process(mdf_stream entry)
         {
+            // save to the right contributor
+         //   var key = 
+          //  _sourceDictionary.Add(entry.ExchangeOrContributor,new RingBuffer<float>());
             //TODO put machine learning here
             var last = float.Parse(entry.value);
             var average = buffer.Average();

@@ -16,12 +16,17 @@ namespace App.GUI
         public SourceAdress(IValueChangedListener listener)
         {
             this.listener = listener;
-
-            streamManagers.Add(StreamTypes.CHFEUR, new StreamManager.StreamManager(StreamTypes.CHFEUR, listener));
-            streamManagers.Add(StreamTypes.EURCHF, new StreamManager.StreamManager(StreamTypes.EURCHF, listener));
-
+            foreach (StreamTypes type in Enum.GetValues(typeof(StreamTypes)))
+            {
+                AddManager(type);
+            }
+            
+      
         }
 
+     private void AddManager(StreamTypes types){
+            streamManagers.Add(types, new StreamManager.StreamManager(types, listener));
+        }
 
 
 
