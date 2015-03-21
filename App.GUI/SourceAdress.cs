@@ -35,6 +35,7 @@ namespace App.GUI
             //TODO database load entries
             using (var DBContext = new SixDataContext())
             {
+                // thread this:
                var listOfAllEntries =  DBContext.mdf_stream.OrderBy(x => x.GSN);
                var total = listOfAllEntries.Count();
                 for (int offset = 0; offset < total; offset += 10)
@@ -53,15 +54,18 @@ namespace App.GUI
                         {
                             var manager = streamManagers[type];
                             manager.Process(result);
+                            // sleep 20 microsecond
 
                         }
                         catch (Exception e)
                         {
                             Debug.WriteLine("no Manager Found for " + value + " " + e.Message);
                         }
+
                     }
                 }
             }
+            // thread end:
         }
 
         private static List<mdf_stream> TakeNext(IQueryable<mdf_stream> ctx, long offset)
