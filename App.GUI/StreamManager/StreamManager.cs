@@ -11,7 +11,7 @@ namespace App.GUI.StreamManager
     {
         // size of ringbuffer == size  of events to keep
         private RingBuffer<float> buffer = new RingBuffer<float>(10);
-        float ONE_PERCENT = 0.01f;
+        private const float ONE_PERCENT = 0.01f;
 
         private readonly IValueChangedListener _listener;
         private readonly StreamTypes _managerType;
